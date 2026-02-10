@@ -1,0 +1,43 @@
+.posterStyle {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        /* "You need to set display: -webkit-box on an element to be able to use line-clamp or -webkit-line-clamp with it. Those two properties set the maximum number of lines of text a box can be. With text-overflow: ellipsis, the text will end with an ellipsis if truncated. (You may also need -webkit-box-orient: vertical as well; this may also be browser dependent.)
+        edited Apr 30, 2024 at 17:53 
+        answered Oct 25, 2023 at 21:19 
+        BallpointBen" 
+        https: //stackoverflow.com/questions/74603094/what-does-display-webkit-box-do-and-what-browsers-support-it*/
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        word-break: break-word;
+        /* My addition based on the above source and
+        https: //developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-overflow */
+        text-overflow: ellipsis;
+    }
+
+    img {
+        max-width: 160px;
+        margin-right: 16px;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    span {
+        font-size: 0.8rem;
+        display: inline-block;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
